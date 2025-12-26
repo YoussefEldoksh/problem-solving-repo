@@ -1,0 +1,560 @@
+[
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "binary_search",
+        "kind": 2,
+        "importPath": "binary_search_recersive",
+        "description": "binary_search_recersive",
+        "peekOfCode": "def binary_search(arr,low,high,target):\n    mid = (low+high) // 2\n    if low > high:\n        return False\n    if arr[mid] == target:\n        return mid\n    if arr[mid] < target:\n        return binary_search(arr,mid+1,high,target)\n    else:\n        return binary_search(arr,low,mid-1,target)",
+        "detail": "binary_search_recersive",
+        "documentation": {}
+    },
+    {
+        "label": "arr",
+        "kind": 5,
+        "importPath": "binary_search_recersive",
+        "description": "binary_search_recersive",
+        "peekOfCode": "arr = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]\nresult = binary_search(arr,0,len(arr)-1,9)\nprint(result)",
+        "detail": "binary_search_recersive",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "binary_search_recersive",
+        "description": "binary_search_recersive",
+        "peekOfCode": "result = binary_search(arr,0,len(arr)-1,9)\nprint(result)",
+        "detail": "binary_search_recersive",
+        "documentation": {}
+    },
+    {
+        "label": "coinChange",
+        "kind": 2,
+        "importPath": "coin_change",
+        "description": "coin_change",
+        "peekOfCode": "def coinChange(coins,amount):\n    if amount == 0:\n        return 0\n    nums = [-1] * (amount+1)\n    nums [0] = 0\n    for i in range(1,amount+1):\n        nums[i] = float('inf')\n        for j in range(0,len(coins)):\n            if coins[j] <= i:\n                nums[i] = min(nums[i], 1 + nums[i - coins[j]])",
+        "detail": "coin_change",
+        "documentation": {}
+    },
+    {
+        "label": "coins",
+        "kind": 5,
+        "importPath": "coin_change",
+        "description": "coin_change",
+        "peekOfCode": "coins = [1,2,5]\namount = 11\nprint(coinChange(coins,amount))",
+        "detail": "coin_change",
+        "documentation": {}
+    },
+    {
+        "label": "amount",
+        "kind": 5,
+        "importPath": "coin_change",
+        "description": "coin_change",
+        "peekOfCode": "amount = 11\nprint(coinChange(coins,amount))",
+        "detail": "coin_change",
+        "documentation": {}
+    },
+    {
+        "label": "maxArea",
+        "kind": 2,
+        "importPath": "containerWithMostWater",
+        "description": "containerWithMostWater",
+        "peekOfCode": "def maxArea(height):\n    low = 0\n    high = len(height)-1\n    currentArea = 0\n    maxArea = 0\n    while low < high:\n        currentArea = (high - low) * min(height[low], height[high])\n        maxArea = max(maxArea, currentArea)\n        # try to remove short lengths\n        if height[low] < height[high]:",
+        "detail": "containerWithMostWater",
+        "documentation": {}
+    },
+    {
+        "label": "height",
+        "kind": 5,
+        "importPath": "containerWithMostWater",
+        "description": "containerWithMostWater",
+        "peekOfCode": "height = [2,3,4,5,18,17,6]\nprint(maxArea(height))",
+        "detail": "containerWithMostWater",
+        "documentation": {}
+    },
+    {
+        "label": "has_dups",
+        "kind": 2,
+        "importPath": "contains_duplicates",
+        "description": "contains_duplicates",
+        "peekOfCode": "def has_dups(nums):\n    hashmap = set()\n    for i in nums:\n        if i in hashmap:\n            return True\n        hashmap.add(i)\n    print(hashmap)\n    return False\nnums = [7,4,2,6,8,14]\nprint(has_dups(nums))",
+        "detail": "contains_duplicates",
+        "documentation": {}
+    },
+    {
+        "label": "nums",
+        "kind": 5,
+        "importPath": "contains_duplicates",
+        "description": "contains_duplicates",
+        "peekOfCode": "nums = [7,4,2,6,8,14]\nprint(has_dups(nums))",
+        "detail": "contains_duplicates",
+        "documentation": {}
+    },
+    {
+        "label": "count_sort",
+        "kind": 2,
+        "importPath": "counting_sort",
+        "description": "counting_sort",
+        "peekOfCode": "def count_sort(A,num_range):\n    counting_arr = [0]*(num_range+1)\n    result = [0]*len(A)\n    for i in range(0,len(A)):\n        counting_arr[A[i]] = counting_arr[A[i]] + 1\n    # for i in range(0,len(A)):\n    #     for j in range(0,counting_arr[i]):\n    #         print(i)\n    for i in range(1,num_range+1):  #this makes it stable -> elements of the same value appear in the same order as before \n        counting_arr[i] += counting_arr[i-1]    ",
+        "detail": "counting_sort",
+        "documentation": {}
+    },
+    {
+        "label": "arr",
+        "kind": 5,
+        "importPath": "counting_sort",
+        "description": "counting_sort",
+        "peekOfCode": "arr = [0, 3, 3, 0, 1, 1, 0, 1]\nprint(count_sort(arr,3))",
+        "detail": "counting_sort",
+        "documentation": {}
+    },
+    {
+        "label": "fib",
+        "kind": 2,
+        "importPath": "fib_memoized",
+        "description": "fib_memoized",
+        "peekOfCode": "def fib(n,memo):\n    if n == 0 or n == 1: \n        return n\n    if(not memo[n]):\n        memo[n] = fib(n-2,memo) + fib(n-1,memo)\n    return memo[n]\nmemo = [0] * 6\nfib(5,memo)\nprint(memo)",
+        "detail": "fib_memoized",
+        "documentation": {}
+    },
+    {
+        "label": "memo",
+        "kind": 5,
+        "importPath": "fib_memoized",
+        "description": "fib_memoized",
+        "peekOfCode": "memo = [0] * 6\nfib(5,memo)\nprint(memo)",
+        "detail": "fib_memoized",
+        "documentation": {}
+    },
+    {
+        "label": "fib",
+        "kind": 2,
+        "importPath": "fib_tabular",
+        "description": "fib_tabular",
+        "peekOfCode": "def fib(n):\n    F = [0]*(n+1)\n    F[0],F[1] = 0,1\n    for i in range(2,n+1):\n        F[i] = F[i-2] + F[i-1]            \n    return F\nprint(fib(5))",
+        "detail": "fib_tabular",
+        "documentation": {}
+    },
+    {
+        "label": "partition",
+        "kind": 2,
+        "importPath": "find_kth_largest",
+        "description": "find_kth_largest",
+        "peekOfCode": "def partition(A,low,high):\n    pivot = A[high]\n    i = low-1\n    for j in range(low,high):\n        if A[j] > pivot:\n            i = i + 1\n            A[i], A[j] = A[j], A[i]\n    A[high],A[i+1] = A[i+1],A[high]\n    print(A)\n    return i + 1",
+        "detail": "find_kth_largest",
+        "documentation": {}
+    },
+    {
+        "label": "find_kth",
+        "kind": 2,
+        "importPath": "find_kth_largest",
+        "description": "find_kth_largest",
+        "peekOfCode": "def find_kth(A,low,high,k):\n    if low == high:\n        return low\n    pivot = partition(A,low,high)\n    rank = pivot - low + 1\n    if rank == k:\n        return pivot\n    if rank > k:\n        return find_kth(A,low,pivot-1,k)\n    if rank < k:",
+        "detail": "find_kth_largest",
+        "documentation": {}
+    },
+    {
+        "label": "arr",
+        "kind": 5,
+        "importPath": "find_kth_largest",
+        "description": "find_kth_largest",
+        "peekOfCode": "arr = [3,2,3,1,2,4,5,5,6]\nindex = find_kth(arr,0,len(arr)-1,4)\nprint(arr[index])",
+        "detail": "find_kth_largest",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 5,
+        "importPath": "find_kth_largest",
+        "description": "find_kth_largest",
+        "peekOfCode": "index = find_kth(arr,0,len(arr)-1,4)\nprint(arr[index])",
+        "detail": "find_kth_largest",
+        "documentation": {}
+    },
+    {
+        "label": "frac_knapsack",
+        "kind": 2,
+        "importPath": "frac.napsack",
+        "description": "frac.napsack",
+        "peekOfCode": "def frac_knapsack(A,knapsack_size):\n    A.sort(key=lambda x: x[2], reverse=True)\n    print(A)\n    rev = 0\n    for item in A:\n        if item[0] <= knapsack_size:\n            rev += item[1]\n            knapsack_size -= item[0]\n        else:\n            rev += item[2]*knapsack_size",
+        "detail": "frac.napsack",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "frac.napsack",
+        "description": "frac.napsack",
+        "peekOfCode": "A = [[1,5,5],[3,10,10/3],[5,15,3],[4,7,7/4],[1,8,8],[3,9,3],[2,4,2]]\nprint(frac_knapsack(A,15))",
+        "detail": "frac.napsack",
+        "documentation": {}
+    },
+    {
+        "label": "maximumUnits",
+        "kind": 2,
+        "importPath": "fractional_knapsack",
+        "description": "fractional_knapsack",
+        "peekOfCode": "def maximumUnits(boxTypes, truckSize):\n    boxTypes.sort(key=lambda x: x[1], reverse=True)\n    A = 0\n    for i in range(len(boxTypes)):\n        if truckSize == 0:\n            break\n        if boxTypes[i][0] <= truckSize:\n            A += boxTypes[i][0] * boxTypes[i][1]\n            truckSize -= boxTypes[i][0]\n        elif boxTypes[i][0] > truckSize:",
+        "detail": "fractional_knapsack",
+        "documentation": {}
+    },
+    {
+        "label": "boxTypes",
+        "kind": 5,
+        "importPath": "fractional_knapsack",
+        "description": "fractional_knapsack",
+        "peekOfCode": "boxTypes = [[1,3],[2,2],[3,1]]\nprint(maximumUnits(boxTypes,4))",
+        "detail": "fractional_knapsack",
+        "documentation": {}
+    },
+    {
+        "label": "knapsack",
+        "kind": 2,
+        "importPath": "knapsack_01_tabular",
+        "description": "knapsack_01_tabular",
+        "peekOfCode": "def knapsack(n,items):\n    a = len(items)+1\n    # create a rows x (n+1) table with independent rows\n    c = [[-1 for x in range(n+1)] for _ in range(a)]\n    # print(len(c[0]))\n    for i in range(a):\n        c[i][0] = 0\n    for i in range(n+1):\n        c[0][i] = 0\n    for i in range(1,a):",
+        "detail": "knapsack_01_tabular",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "kind": 5,
+        "importPath": "knapsack_01_tabular",
+        "description": "knapsack_01_tabular",
+        "peekOfCode": "A = [[10,60],[20,100],[30,120]]\nprint(knapsack(50,A))\n    # c = [[-1]*(n+1)]*(a)\n# Using [[[...]] * a](http://vscodecontentref/2) \n# duplicates a reference to the same inner list a times. \n# All rows point to the same list object, so modifying c[i][j] \n# changes that same list for every row — producing wrong DP updates.",
+        "detail": "knapsack_01_tabular",
+        "documentation": {}
+    },
+    {
+        "label": "partition",
+        "kind": 2,
+        "importPath": "largest_k_elements",
+        "description": "largest_k_elements",
+        "peekOfCode": "def partition(A,low,high):\n    pivot = random.randint(low,high)\n    i = low-1\n    for j in range(low,high):\n        if A[j] > pivot:\n            i = i + 1\n            A[i], A[j] = A[j], A[i]\n    A[high],A[i+1] = A[i+1],A[high]\n    print(A)\n    return i + 1",
+        "detail": "largest_k_elements",
+        "documentation": {}
+    },
+    {
+        "label": "largest_k_elements",
+        "kind": 2,
+        "importPath": "largest_k_elements",
+        "description": "largest_k_elements",
+        "peekOfCode": "def largest_k_elements(A,low,high,k):\n    if low == high:\n        return low",
+        "detail": "largest_k_elements",
+        "documentation": {}
+    },
+    {
+        "label": "lcs",
+        "kind": 2,
+        "importPath": "LCS",
+        "description": "LCS",
+        "peekOfCode": "def lcs(string_A, string_B):\n    sub_string = [[0 for x in range(len(string_A)+1)] for _ in range(len(string_B)+1)]\n    for i in range(1, len(string_B)+1):\n        for j in range(1, len(string_A)+1):\n            if string_A[j-1] == string_B[i-1]:\n                sub_string[i][j] = sub_string[i-1][j-1] + 1\n            else:\n                sub_string[i][j] = max(sub_string[i-1][j], sub_string[i][j-1])\n    LCS = []\n    A = len(string_A)",
+        "detail": "LCS",
+        "documentation": {}
+    },
+    {
+        "label": "string_A",
+        "kind": 5,
+        "importPath": "LCS",
+        "description": "LCS",
+        "peekOfCode": "string_A = \"abbcccba\"\nstring_B = \"abcccbba\"\nlcs(string_A, string_B)  # Returns \"bcccb\"",
+        "detail": "LCS",
+        "documentation": {}
+    },
+    {
+        "label": "string_B",
+        "kind": 5,
+        "importPath": "LCS",
+        "description": "LCS",
+        "peekOfCode": "string_B = \"abcccbba\"\nlcs(string_A, string_B)  # Returns \"bcccb\"",
+        "detail": "LCS",
+        "documentation": {}
+    },
+    {
+        "label": "longestPalindromeSubseq",
+        "kind": 2,
+        "importPath": "LCS_palindromic",
+        "description": "LCS_palindromic",
+        "peekOfCode": "def longestPalindromeSubseq(self, s):\n    reversed_s = s[::-1]\n    sub_string = [[0 for x in range(len(s)+1)] for _ in range(len(reversed_s)+1)]\n    for i in range(1, len(reversed_s)+1):\n        for j in range(1, len(s)+1):\n            if s[j-1] == reversed_s[i-1]:\n                sub_string[i][j] = sub_string[i-1][j-1] + 1\n            else:\n                sub_string[i][j] = max(sub_string[i-1][j], sub_string[i][j-1])\n    return sub_string[i][j]",
+        "detail": "LCS_palindromic",
+        "documentation": {}
+    },
+    {
+        "label": "max_crossing",
+        "kind": 2,
+        "importPath": "maximum_subarray",
+        "description": "maximum_subarray",
+        "peekOfCode": "def max_crossing(A,low,mid,high):\n    left_sum = -10000\n    sum = 0\n    max_left = mid\n    for i in range (mid,low-1,-1):\n        sum = sum + A[i]\n        if sum > left_sum:\n            left_sum = sum\n            max_left = i\n    sum = 0",
+        "detail": "maximum_subarray",
+        "documentation": {}
+    },
+    {
+        "label": "max_subarray",
+        "kind": 2,
+        "importPath": "maximum_subarray",
+        "description": "maximum_subarray",
+        "peekOfCode": "def max_subarray(arr,low,high):\n    if low == high:\n        return low,high,arr[low]\n    else:\n        print(\"Dividing:\", arr[low:high+1])\n        mid = (low+high)//2\n        left_start,left_end,left_sum = max_subarray(arr,low,mid)\n        right_start,right_end,right_sum = max_subarray(arr,mid+1,high)\n        crossing_start,crossing_end,crossing_sum = max_crossing(arr,low,mid,high)\n        print(\"Conquering:\", arr[low:high+1])",
+        "detail": "maximum_subarray",
+        "documentation": {}
+    },
+    {
+        "label": "arr",
+        "kind": 5,
+        "importPath": "maximum_subarray",
+        "description": "maximum_subarray",
+        "peekOfCode": "arr = [-1,-6,-9,4,-8,5,-4,2,-1,1,-8,0,1,3,1]\nstart,end,sum = max_subarray(arr,0,len(arr)-1)\nprint(\"Subarray:\", arr[start:end+1])\nprint(\"Sum:\", sum)",
+        "detail": "maximum_subarray",
+        "documentation": {}
+    },
+    {
+        "label": "start,end,sum",
+        "kind": 5,
+        "importPath": "maximum_subarray",
+        "description": "maximum_subarray",
+        "peekOfCode": "start,end,sum = max_subarray(arr,0,len(arr)-1)\nprint(\"Subarray:\", arr[start:end+1])\nprint(\"Sum:\", sum)",
+        "detail": "maximum_subarray",
+        "documentation": {}
+    },
+    {
+        "label": "maximum",
+        "kind": 2,
+        "importPath": "max_in_rotated_arr",
+        "description": "max_in_rotated_arr",
+        "peekOfCode": "def maximum(a,low,high):\n    if low == high:\n        return a[low]\n    mid = (low+high)//2\n    if a[mid] > a[mid+1]:\n        return a[mid]\n    if a[mid] < a[low]:\n        return maximum(a,low,mid-1)\n    if a[mid] > a[low]:\n        return maximum(a,mid+1,high)",
+        "detail": "max_in_rotated_arr",
+        "documentation": {}
+    },
+    {
+        "label": "arr",
+        "kind": 5,
+        "importPath": "max_in_rotated_arr",
+        "description": "max_in_rotated_arr",
+        "peekOfCode": "arr = [35,42,5,15,27,29]\nprint(maximum(arr,0,len(arr)-1))",
+        "detail": "max_in_rotated_arr",
+        "documentation": {}
+    },
+    {
+        "label": "A1",
+        "kind": 5,
+        "importPath": "median_of_two_arrays",
+        "description": "median_of_two_arrays",
+        "peekOfCode": "A1 = [1,2,3,5,5,6,7,8]\nA2 = [1,2,3,4]",
+        "detail": "median_of_two_arrays",
+        "documentation": {}
+    },
+    {
+        "label": "A2",
+        "kind": 5,
+        "importPath": "median_of_two_arrays",
+        "description": "median_of_two_arrays",
+        "peekOfCode": "A2 = [1,2,3,4]",
+        "detail": "median_of_two_arrays",
+        "documentation": {}
+    },
+    {
+        "label": "power",
+        "kind": 2,
+        "importPath": "power",
+        "description": "power",
+        "peekOfCode": "def power(x,n):\n    if n == 0 :\n        return 1\n    res = power(x,n//2)\n    if n % 2 == 0:\n        return res*res\n    if n % 2 != 0:\n        return res*res*x\nprint(power(2,3))",
+        "detail": "power",
+        "documentation": {}
+    },
+    {
+        "label": "productExceptSelf",
+        "kind": 2,
+        "importPath": "productOfArrayExceptSelf",
+        "description": "productOfArrayExceptSelf",
+        "peekOfCode": "def productExceptSelf(nums):\n    prefix = []\n    postfix = []\n    answer = []\n    for i in range(len(nums)):\n        if i-1 < 0:\n            prefix.append(1*nums[i])\n        else:\n            prefix.append(prefix[i-1]*nums[i])\n    j = 0",
+        "detail": "productOfArrayExceptSelf",
+        "documentation": {}
+    },
+    {
+        "label": "partition",
+        "kind": 2,
+        "importPath": "quick_sort",
+        "description": "quick_sort",
+        "peekOfCode": "def partition(A,low,high):\n    pivot = A[high]\n    i = low-1\n    for j in range(low,high):\n        if A[j] < pivot:\n            i = i + 1\n            A[i],A[j] = A[j],A[i]\n    A[high],A[i+1] = A[i+1],A[high]\n    print(A)\n    return i + 1",
+        "detail": "quick_sort",
+        "documentation": {}
+    },
+    {
+        "label": "quick_sort",
+        "kind": 2,
+        "importPath": "quick_sort",
+        "description": "quick_sort",
+        "peekOfCode": "def quick_sort(A,low,high):\n    if low < high:\n        pivot = partition(A,low,high)\n        quick_sort(A,low,pivot-1)\n        quick_sort(A,pivot+1, high)\n    return A\narr = [10,80,90,60,30,20]\nprint(quick_sort(arr,0,len(arr)-1))",
+        "detail": "quick_sort",
+        "documentation": {}
+    },
+    {
+        "label": "arr",
+        "kind": 5,
+        "importPath": "quick_sort",
+        "description": "quick_sort",
+        "peekOfCode": "arr = [10,80,90,60,30,20]\nprint(quick_sort(arr,0,len(arr)-1))",
+        "detail": "quick_sort",
+        "documentation": {}
+    },
+    {
+        "label": "reverseBits",
+        "kind": 2,
+        "importPath": "reverse_binary",
+        "description": "reverse_binary",
+        "peekOfCode": "def reverseBits(n):\n    bits = list(map(int, format(n, '032b')))\n    print(bits)\n    auxreverseBits(bits,0,len(bits)-1)\n    print(bits)\n    number = binary_to_int(bits)\n    return number\ndef auxreverseBits(bits,low,high):\n    if low < high:\n        mid = (low + high)//2",
+        "detail": "reverse_binary",
+        "documentation": {}
+    },
+    {
+        "label": "auxreverseBits",
+        "kind": 2,
+        "importPath": "reverse_binary",
+        "description": "reverse_binary",
+        "peekOfCode": "def auxreverseBits(bits,low,high):\n    if low < high:\n        mid = (low + high)//2\n        auxreverseBits(bits,low,mid)\n        auxreverseBits(bits,mid+1,high)\n        reverse(bits,low,mid,high)\ndef reverse(bits,low,mid,high):\n        n1 = mid - low + 1\n        n2 = high - mid\n        L = [0] * n1",
+        "detail": "reverse_binary",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "kind": 2,
+        "importPath": "reverse_binary",
+        "description": "reverse_binary",
+        "peekOfCode": "def reverse(bits,low,mid,high):\n        n1 = mid - low + 1\n        n2 = high - mid\n        L = [0] * n1\n        R = [0] * n2\n        for i in range(n1):\n            L[i] = bits[low + i]\n        for j in range(n2):\n            R[j] = bits[mid + 1 + j]\n        i = 0  ",
+        "detail": "reverse_binary",
+        "documentation": {}
+    },
+    {
+        "label": "binary_to_int",
+        "kind": 2,
+        "importPath": "reverse_binary",
+        "description": "reverse_binary",
+        "peekOfCode": "def binary_to_int(binary):\n    value = 0\n    for bit in binary:\n        value = value * 2 + bit\n    return value\nprint(reverseBits(2147483644))",
+        "detail": "reverse_binary",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "kind": 2,
+        "importPath": "reverse_int",
+        "description": "reverse_int",
+        "peekOfCode": "def reverse(x):\n    num = 0\n    while x > 0:\n        num = (num*10)+(x%10)\n        x = x//10\n    print(num)\nreverse(12345)",
+        "detail": "reverse_int",
+        "documentation": {}
+    },
+    {
+        "label": "rod_cutting",
+        "kind": 2,
+        "importPath": "rod_cutting_tabular",
+        "description": "rod_cutting_tabular",
+        "peekOfCode": "def rod_cutting(prices):\n    n = len(prices) - 1  # max rod length\n    revenue = [0] * (n + 1)\n    solutions = [0] * (n+1)\n    for i in range(1,len(prices)):\n        max_rev = float('-inf')\n        for j in range(1,i+1):\n            if max_rev < prices[j] + revenue[i-j]:\n                max_rev = prices[j]+revenue[i-j]\n                solutions[i] = j",
+        "detail": "rod_cutting_tabular",
+        "documentation": {}
+    },
+    {
+        "label": "prices",
+        "kind": 5,
+        "importPath": "rod_cutting_tabular",
+        "description": "rod_cutting_tabular",
+        "peekOfCode": "prices = [0,1,5,8,9,10,17,17,20]\nprint(rod_cutting(prices))",
+        "detail": "rod_cutting_tabular",
+        "documentation": {}
+    },
+    {
+        "label": "romanToInt",
+        "kind": 2,
+        "importPath": "roman_to_integer",
+        "description": "roman_to_integer",
+        "peekOfCode": "def romanToInt(s,low=0):\n    if low >= len(s):\n        return 0\n    values = {\n            'I': 1,\n            'V': 5,\n            'X': 10,\n            'L': 50,\n            'C': 100,\n            'D': 500,",
+        "detail": "roman_to_integer",
+        "documentation": {}
+    },
+    {
+        "label": "partition",
+        "kind": 2,
+        "importPath": "select_kth_smallest",
+        "description": "select_kth_smallest",
+        "peekOfCode": "def partition(A,low,high):\n    pivot = A[high]\n    i = low-1\n    for j in range(low,high):\n        if A[j] < pivot:\n            i = i + 1\n            A[i], A[j] = A[j], A[i]\n    A[high],A[i+1] = A[i+1],A[high]\n    print(A)\n    return i + 1",
+        "detail": "select_kth_smallest",
+        "documentation": {}
+    },
+    {
+        "label": "find_kth",
+        "kind": 2,
+        "importPath": "select_kth_smallest",
+        "description": "select_kth_smallest",
+        "peekOfCode": "def find_kth(A,low,high,k):\n    if low == high:\n        return low\n    pivot = partition(A,low,high)\n    rank = pivot - low + 1\n    if rank == k:\n        return pivot\n    if rank > k:\n        return find_kth(A,low,pivot-1,k)\n    if rank < k:",
+        "detail": "select_kth_smallest",
+        "documentation": {}
+    },
+    {
+        "label": "arr",
+        "kind": 5,
+        "importPath": "select_kth_smallest",
+        "description": "select_kth_smallest",
+        "peekOfCode": "arr = [10,80,90,60,30,20]\nindex = find_kth(arr,0,len(arr)-1,3)\nprint(arr[index])",
+        "detail": "select_kth_smallest",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 5,
+        "importPath": "select_kth_smallest",
+        "description": "select_kth_smallest",
+        "peekOfCode": "index = find_kth(arr,0,len(arr)-1,3)\nprint(arr[index])",
+        "detail": "select_kth_smallest",
+        "documentation": {}
+    },
+    {
+        "label": "mySqrt",
+        "kind": 2,
+        "importPath": "sqrt",
+        "description": "sqrt",
+        "peekOfCode": "def mySqrt(x):\n    if x == 0: return 0\n    if x == 1: return 1\n    i = x/2\n    while i > 0:\n        if (i/2)*(i/2) > x: \n            i = (i/2)+1\n        if i*i <= x:\n            return i\n        else : i-=1",
+        "detail": "sqrt",
+        "documentation": {}
+    },
+    {
+        "label": "stair_case",
+        "kind": 2,
+        "importPath": "stair_case",
+        "description": "stair_case",
+        "peekOfCode": "def stair_case(n,memo):\n    if n <= 0:\n        return 0\n    if n == 2 or n == 3:\n        return 1\n    if(not memo[n]):\n        memo[n] =  stair_case(n-2,memo) + stair_case(n-3,memo) \n    return memo[n]\nn = 7\nmemo = [0] * (n+1)",
+        "detail": "stair_case",
+        "documentation": {}
+    },
+    {
+        "label": "n",
+        "kind": 5,
+        "importPath": "stair_case",
+        "description": "stair_case",
+        "peekOfCode": "n = 7\nmemo = [0] * (n+1)\nprint(stair_case(n,memo))",
+        "detail": "stair_case",
+        "documentation": {}
+    },
+    {
+        "label": "memo",
+        "kind": 5,
+        "importPath": "stair_case",
+        "description": "stair_case",
+        "peekOfCode": "memo = [0] * (n+1)\nprint(stair_case(n,memo))",
+        "detail": "stair_case",
+        "documentation": {}
+    }
+]
