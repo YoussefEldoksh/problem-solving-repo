@@ -18,6 +18,15 @@
         "documentation": {}
     },
     {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "bestdaytoBuyAndSellA_Stock_1",
+        "description": "bestdaytoBuyAndSellA_Stock_1",
+        "peekOfCode": "class Solution:\n    def maxProfit(self, prices: List[int]) -> int:\n        if len(prices) == 1:\n            return 0\n        max_profit = 0\n        i = 0\n        j = 1\n        while i < len(prices) and j < len(prices):\n            if prices[j] - prices[i] <= 0 :\n                i = j",
+        "detail": "bestdaytoBuyAndSellA_Stock_1",
+        "documentation": {}
+    },
+    {
         "label": "binary_search",
         "kind": 2,
         "importPath": "binary_search_recersive",
