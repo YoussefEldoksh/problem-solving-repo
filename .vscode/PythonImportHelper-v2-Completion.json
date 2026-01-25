@@ -162,6 +162,15 @@
         "documentation": {}
     },
     {
+        "label": "searchRange",
+        "kind": 2,
+        "importPath": "Find First_and_Last_Position_of_Element_in_Sorted_Array",
+        "description": "Find First_and_Last_Position_of_Element_in_Sorted_Array",
+        "peekOfCode": "def searchRange(nums, target):\n    i = 0\n    j = len(nums)-1\n    if len(nums) == 1:\n        if nums[0] == target:\n            return [0,0]\n        else:\n            return [-1,-1]\n    while i <= j:\n        if nums[i] != target:",
+        "detail": "Find First_and_Last_Position_of_Element_in_Sorted_Array",
+        "documentation": {}
+    },
+    {
         "label": "partition",
         "kind": 2,
         "importPath": "find_kth_largest",
@@ -200,19 +209,19 @@
     {
         "label": "frac_knapsack",
         "kind": 2,
-        "importPath": "frac.napsack",
-        "description": "frac.napsack",
+        "importPath": "frac.knapsack",
+        "description": "frac.knapsack",
         "peekOfCode": "def frac_knapsack(A,knapsack_size):\n    A.sort(key=lambda x: x[2], reverse=True)\n    print(A)\n    rev = 0\n    for item in A:\n        if item[0] <= knapsack_size:\n            rev += item[1]\n            knapsack_size -= item[0]\n        else:\n            rev += item[2]*knapsack_size",
-        "detail": "frac.napsack",
+        "detail": "frac.knapsack",
         "documentation": {}
     },
     {
         "label": "A",
         "kind": 5,
-        "importPath": "frac.napsack",
-        "description": "frac.napsack",
+        "importPath": "frac.knapsack",
+        "description": "frac.knapsack",
         "peekOfCode": "A = [[1,5,5],[3,10,10/3],[5,15,3],[4,7,7/4],[1,8,8],[3,9,3],[2,4,2]]\nprint(frac_knapsack(A,15))",
-        "detail": "frac.napsack",
+        "detail": "frac.knapsack",
         "documentation": {}
     },
     {
@@ -301,7 +310,7 @@
         "kind": 2,
         "importPath": "LCS_palindromic",
         "description": "LCS_palindromic",
-        "peekOfCode": "def longestPalindromeSubseq(self, s):\n    reversed_s = s[::-1]\n    sub_string = [[0 for x in range(len(s)+1)] for _ in range(len(reversed_s)+1)]\n    for i in range(1, len(reversed_s)+1):\n        for j in range(1, len(s)+1):\n            if s[j-1] == reversed_s[i-1]:\n                sub_string[i][j] = sub_string[i-1][j-1] + 1\n            else:\n                sub_string[i][j] = max(sub_string[i-1][j], sub_string[i][j-1])\n    return sub_string[i][j]",
+        "peekOfCode": "def longestPalindromeSubseq(self, s):\n    reversed_s = s[::-1]\n    sub_seq = [[0 for x in range(len(s)+1)] for _ in range(len(reversed_s)+1)]\n    for i in range(1, len(reversed_s)+1):\n        for j in range(1, len(s)+1):\n            if s[j-1] == reversed_s[i-1]:\n                sub_seq[i][j] = sub_seq[i-1][j-1] + 1\n            else:\n                sub_seq[i][j] = max(sub_seq[i-1][j], sub_seq[i][j-1])\n    return sub_seq[i][j]",
         "detail": "LCS_palindromic",
         "documentation": {}
     },
