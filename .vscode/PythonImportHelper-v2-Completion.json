@@ -9,6 +9,14 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "math",
         "kind": 6,
         "isExtraImport": true,
@@ -312,6 +320,24 @@
         "description": "LCS_palindromic",
         "peekOfCode": "def longestPalindromeSubseq(self, s):\n    reversed_s = s[::-1]\n    sub_seq = [[0 for x in range(len(s)+1)] for _ in range(len(reversed_s)+1)]\n    for i in range(1, len(reversed_s)+1):\n        for j in range(1, len(s)+1):\n            if s[j-1] == reversed_s[i-1]:\n                sub_seq[i][j] = sub_seq[i-1][j-1] + 1\n            else:\n                sub_seq[i][j] = max(sub_seq[i-1][j], sub_seq[i][j-1])\n    return sub_seq[i][j]",
         "detail": "LCS_palindromic",
+        "documentation": {}
+    },
+    {
+        "label": "longestCommonPrefix",
+        "kind": 2,
+        "importPath": "Longest_Common_Prefix",
+        "description": "Longest_Common_Prefix",
+        "peekOfCode": "def longestCommonPrefix(self, strs: List[str]) -> str:\n    ans = \"\"\n    if len(strs) == 1:\n        return strs[0]\n    for i in range(len(min(strs, key=len))):\n        hashset = set()\n        for j in range(len(strs)-1):\n            hashset.add(strs[j][i])\n        if hashset == {strs[-1][i]}:\n            ans += strs[0][i]",
+        "detail": "Longest_Common_Prefix",
+        "documentation": {}
+    },
+    {
+        "label": "strs",
+        "kind": 5,
+        "importPath": "Longest_Common_Prefix",
+        "description": "Longest_Common_Prefix",
+        "peekOfCode": "strs = [\"flower\",\"flow\",\"flight\"]\nprint(longestCommonPrefix(None, strs))",
+        "detail": "Longest_Common_Prefix",
         "documentation": {}
     },
     {
