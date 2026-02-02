@@ -17,6 +17,38 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "maximum",
+        "importPath": "max_in_rotated_arr",
+        "description": "max_in_rotated_arr",
+        "isExtraImport": true,
+        "detail": "max_in_rotated_arr",
+        "documentation": {}
+    },
+    {
+        "label": "nums",
+        "importPath": "contains_duplicates",
+        "description": "contains_duplicates",
+        "isExtraImport": true,
+        "detail": "contains_duplicates",
+        "documentation": {}
+    },
+    {
         "label": "math",
         "kind": 6,
         "isExtraImport": true,
@@ -413,6 +445,24 @@
         "documentation": {}
     },
     {
+        "label": "missingNumber",
+        "kind": 2,
+        "importPath": "missing_number",
+        "description": "missing_number",
+        "peekOfCode": "def missingNumber(nums: List[int]) -> int:\n    n = len(nums)\n    maximum = max(nums)\n    myArr = list(range(0, maximum+1))\n    print(myArr)\n    summation = sum(myArr) - sum(nums) \n    if summation == 0 and min(nums) == 0:\n        return maximum+1\n    if summation == 0 and min(nums) > 0:\n        return 0",
+        "detail": "missing_number",
+        "documentation": {}
+    },
+    {
+        "label": "arr",
+        "kind": 5,
+        "importPath": "missing_number",
+        "description": "missing_number",
+        "peekOfCode": "arr = [9,6,4,2,3,5,7,0,1]\nprint(missingNumber(arr))",
+        "detail": "missing_number",
+        "documentation": {}
+    },
+    {
         "label": "power",
         "kind": 2,
         "importPath": "power",
@@ -455,6 +505,24 @@
         "description": "quick_sort",
         "peekOfCode": "arr = [10,80,90,60,30,20]\nprint(quick_sort(arr,0,len(arr)-1))",
         "detail": "quick_sort",
+        "documentation": {}
+    },
+    {
+        "label": "removeDuplicates",
+        "kind": 2,
+        "importPath": "Remove_Duplicates_from_Sorted_Array",
+        "description": "Remove_Duplicates_from_Sorted_Array",
+        "peekOfCode": "def removeDuplicates(nums: List[int]) -> int:\n    first = 0\n    for last in range(1,len(nums)):\n        if nums[first] < nums[last]:\n            first += 1\n            nums[first] = nums[last]\n    print(nums)\narr = [-1,0,0,0,0,3,3]\nremoveDuplicates(arr)",
+        "detail": "Remove_Duplicates_from_Sorted_Array",
+        "documentation": {}
+    },
+    {
+        "label": "arr",
+        "kind": 5,
+        "importPath": "Remove_Duplicates_from_Sorted_Array",
+        "description": "Remove_Duplicates_from_Sorted_Array",
+        "peekOfCode": "arr = [-1,0,0,0,0,3,3]\nremoveDuplicates(arr)",
+        "detail": "Remove_Duplicates_from_Sorted_Array",
         "documentation": {}
     },
     {
