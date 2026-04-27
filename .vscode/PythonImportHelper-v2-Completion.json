@@ -32,6 +32,22 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "random",
         "kind": 6,
         "isExtraImport": true,
@@ -390,6 +406,24 @@
         "documentation": {}
     },
     {
+        "label": "lengthOfLIS",
+        "kind": 2,
+        "importPath": "longest-increasing-subsequence",
+        "description": "longest-increasing-subsequence",
+        "peekOfCode": "def lengthOfLIS( nums: List[int]) -> int:\n    res = []\n    return res\narr = [0,1,0,3,2,3]\nprint(lengthOfLIS(arr))",
+        "detail": "longest-increasing-subsequence",
+        "documentation": {}
+    },
+    {
+        "label": "arr",
+        "kind": 5,
+        "importPath": "longest-increasing-subsequence",
+        "description": "longest-increasing-subsequence",
+        "peekOfCode": "arr = [0,1,0,3,2,3]\nprint(lengthOfLIS(arr))",
+        "detail": "longest-increasing-subsequence",
+        "documentation": {}
+    },
+    {
         "label": "longestCommonPrefix",
         "kind": 2,
         "importPath": "Longest_Common_Prefix",
@@ -720,6 +754,33 @@
         "description": "stair_case",
         "peekOfCode": "memo = [0] * (n+1)\nprint(stair_case(n,memo))",
         "detail": "stair_case",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "valid_sudoko",
+        "description": "valid_sudoko",
+        "peekOfCode": "class Solution:\n    def isValidSudoku(self, board: List[List[str]]) -> bool:\n        rowsSet = set()\n        colsSet = set()\n        boxRowsSet = set()\n        boxColsSet = set()\n        row = 0\n        for i in board[row]:\n            if i in rowsSet:\n                return False",
+        "detail": "valid_sudoko",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "valid_sudoko",
+        "description": "valid_sudoko",
+        "peekOfCode": "result = Solution()\nboard = [[\"5\",\"3\",\".\",\".\",\"7\",\".\",\".\",\".\",\".\"],[\"6\",\".\",\".\",\"1\",\"9\",\"5\",\".\",\".\",\".\"],[\".\",\"9\",\"8\",\".\",\".\",\".\",\".\",\"6\",\".\"],[\"8\",\".\",\".\",\".\",\"6\",\".\",\".\",\".\",\"3\"],[\"4\",\".\",\".\",\"8\",\".\",\"3\",\".\",\".\",\"1\"],[\"7\",\".\",\".\",\".\",\"2\",\".\",\".\",\".\",\"6\"],[\".\",\"6\",\".\",\".\",\".\",\".\",\"2\",\"8\",\".\"],[\".\",\".\",\".\",\"4\",\"1\",\"9\",\".\",\".\",\"5\"],[\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]]\nprint(result.isValidSudoku(board))",
+        "detail": "valid_sudoko",
+        "documentation": {}
+    },
+    {
+        "label": "board",
+        "kind": 5,
+        "importPath": "valid_sudoko",
+        "description": "valid_sudoko",
+        "peekOfCode": "board = [[\"5\",\"3\",\".\",\".\",\"7\",\".\",\".\",\".\",\".\"],[\"6\",\".\",\".\",\"1\",\"9\",\"5\",\".\",\".\",\".\"],[\".\",\"9\",\"8\",\".\",\".\",\".\",\".\",\"6\",\".\"],[\"8\",\".\",\".\",\".\",\"6\",\".\",\".\",\".\",\"3\"],[\"4\",\".\",\".\",\"8\",\".\",\"3\",\".\",\".\",\"1\"],[\"7\",\".\",\".\",\".\",\"2\",\".\",\".\",\".\",\"6\"],[\".\",\"6\",\".\",\".\",\".\",\".\",\"2\",\"8\",\".\"],[\".\",\".\",\".\",\"4\",\"1\",\"9\",\".\",\".\",\"5\"],[\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]]\nprint(result.isValidSudoku(board))",
+        "detail": "valid_sudoko",
         "documentation": {}
     }
 ]
