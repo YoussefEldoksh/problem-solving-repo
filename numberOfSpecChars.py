@@ -7,7 +7,7 @@ def numberOfSpecialChars(word: str): #-> int:
     for i in range(len(word)):
         if not word[i].islower() and  chars.get(word[i]) is None:
             chars[word[i]] = i
-            print(f"{word[i]}: {i}")
+            print(f"{word[i].capitalize()}: {i}")
         else:
             vals[word[i]] = 0   
 
