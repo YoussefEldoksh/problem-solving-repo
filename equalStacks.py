@@ -18,8 +18,6 @@ import sys
 
 def equalStacks(h1, h2, h3):
 
-    
-    
     sum1,sum2,sum3 = sum(h1),sum(h2),sum(h3)
     element = 0
 
