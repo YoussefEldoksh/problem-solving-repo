@@ -20,6 +20,8 @@ def quicksort(arr,low,high):
         quicksort(arr,low,pivot-1)
         quicksort(arr,pivot+1, high)
     return arr
+
+
 arr = [2,5,3,0,56,8,7]
 
 print(quicksort(arr,0,len(arr)-1))
